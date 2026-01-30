@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0b0f1a;
+  color: #e8eeff;
+  padding: 16px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  min-width: 110px;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-weight: 800;
+  background: #222;
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.meta .h1 {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.meta .h2 {
+  opacity: .75;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.btn {
+  margin-left: auto;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(255, 255, 255, .06);
+  color: #e8eeff;
+  cursor: pointer;
+}
+
+.card {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, .04);
+}
+
+.cardTitle {
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.small {
+  opacity: .8;
+  font-size: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(0, 0, 0, .2);
+  color: #e8eeff;
+}
+
+a {
+  color: #9ab3ff;
+}

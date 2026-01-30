@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="result.css">
+</head>
+<body>
+  <div class="top">
+    <div class="badge" id="levelBadge">—</div>
+    <div class="meta">
+      <div class="h1">Scan Result</div>
+      <div class="h2" id="metaLine">—</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cardTitle">Why?</div>
+    <ul id="reasons"></ul>
+  </div>
+
+  <div class="card">
+    <div class="cardTitle">VirusTotal URL Check</div>
+    <div class="row">
+      <input id="urlInput" placeholder="https://example.com" />
+      <button id="checkBtn" class="btn">Check</button>
+    </div>
+    <div id="vtOut" class="small">—</div>
+  </div>
+
+  <div class="card small">
+    Tip: Manage allowlist + keywords in <a href="#" id="openOptions">Options</a>.
+  </div>
+
+  <script src="result.js"></script>
+</body>
+</html>

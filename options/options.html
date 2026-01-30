@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <h1>Phishing Mail Detector — Options</h1>
+
+  <div class="card">
+    <h2>VirusTotal API Key</h2>
+    <input id="vtApiKey" placeholder="Paste your VT API key" />
+    <button id="saveKey">Save</button>
+    <p class="hint">Key is stored in chrome.storage.sync (synced to your Chrome profile).</p>
+  </div>
+
+  <div class="card">
+    <h2>Allowlist Domains</h2>
+    <textarea id="allowDomains" rows="6" placeholder="one domain per line"></textarea>
+    <button id="saveAllow">Save</button>
+  </div>
+
+  <div class="card">
+    <h2>Suspicious Keywords</h2>
+    <textarea id="susKw" rows="8" placeholder="one keyword per line"></textarea>
+    <button id="saveSus">Save</button>
+  </div>
+
+  <div class="card">
+    <h2>Dangerous Keywords</h2>
+    <textarea id="danKw" rows="8" placeholder="one keyword per line"></textarea>
+    <button id="saveDan">Save</button>
+  </div>
+
+  <script src="../src/storage.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

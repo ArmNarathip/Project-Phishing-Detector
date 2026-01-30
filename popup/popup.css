@@ -1,0 +1,455 @@
+/* Fixed popup height */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  width: 360px;
+  height: 600px;
+  min-height: 600px;
+  max-height: 600px;
+  background: #03030a;
+  color: #d9dde5;
+  overflow: hidden;
+}
+
+.wrap {
+  padding: 14px;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px
+}
+
+.brand {
+  display: flex;
+  gap: 10px;
+  align-items: center
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background-image: url('../assets/icon48.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title {
+  font-weight: 800
+}
+
+.sub {
+  opacity: .75;
+  font-size: 12px
+}
+
+.icon-btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: opacity .12s ease, filter .12s ease;
+}
+
+.icon-btn:hover {
+  opacity: 1;
+  filter: brightness(1.15);
+}
+
+/* Scan Button - Circular with Breathing Effect */
+.scan-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.scan-btn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 0;
+  font-weight: 800;
+  font-size: 16px;
+  background: linear-gradient(135deg, #2f6bff, #7b2fff);
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  box-shadow:
+    0 0 30px rgba(47, 107, 255, 0.4),
+    0 0 60px rgba(123, 47, 255, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: breathing 3s ease-in-out infinite;
+}
+
+.scan-btn::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2f6bff, #7b2fff, #2f6bff);
+  z-index: -1;
+  opacity: 0.5;
+  animation: breathing-glow 3s ease-in-out infinite;
+}
+
+.scan-btn:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 40px rgba(47, 107, 255, 0.6),
+    0 0 80px rgba(123, 47, 255, 0.4);
+}
+
+.scan-btn:active {
+  transform: scale(0.98);
+}
+
+/* Breathing Animation */
+@keyframes breathing {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 30px rgba(47, 107, 255, 0.4),
+      0 0 60px rgba(123, 47, 255, 0.2);
+  }
+
+  50% {
+    box-shadow:
+      0 0 50px rgba(47, 107, 255, 0.6),
+      0 0 100px rgba(123, 47, 255, 0.4);
+  }
+}
+
+@keyframes breathing-glow {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.result {
+  margin-top: 20px
+}
+
+.resultTop {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.badge {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: #222;
+  border: 1px solid rgba(255, 255, 255, .10);
+  font-weight: 900;
+  min-width: 120px;
+  text-align: center
+}
+
+.metaLine {
+  margin-top: 8px;
+  opacity: .78;
+  font-size: 12px
+}
+
+.card {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .10)
+}
+
+.card.light {
+  background: rgba(255, 255, 255, .06)
+}
+
+.cardTitle {
+  font-weight: 900;
+  margin-bottom: 6px
+}
+
+.get-api-link {
+  color: #5b9aff;
+  text-decoration: underline;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.get-api-link:hover {
+  color: #7bb3ff;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(0, 0, 0, .22);
+  color: #fff;
+  box-sizing: border-box
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center
+}
+
+.row input {
+  flex: 1
+}
+
+/* Textarea scroll - เฉพาะ textarea ที่สามารถ scroll ได้ */
+textarea {
+  resize: none;
+  overflow-y: auto;
+  max-height: 100px;
+}
+
+.btn {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(255, 255, 255, .06);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity .12s ease, filter .12s ease;
+}
+
+.btn:hover {
+  opacity: 1;
+  filter: brightness(1.15);
+}
+
+.btn.full {
+  width: 100%
+}
+
+.small {
+  opacity: .82;
+  font-size: 12px;
+  margin-top: 6px
+}
+
+.vt-result {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+  opacity: 0.9;
+  word-break: break-all;
+}
+
+/* Settings overlay - scroll เดียวใน panel ทั้งหมด */
+.settings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 600px;
+  max-height: 600px;
+  background: #0b0f1a;
+  padding: 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 12px;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Settings Header - Sticky */
+.settingsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  position: sticky;
+  top: -12px;
+  background: #0b0f1a;
+  padding: 12px 0;
+  margin-top: -12px;
+  z-index: 10;
+}
+
+.settingsTitle {
+  font-weight: 900
+}
+
+.api-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.btn.mini {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.api-blur {
+  filter: blur(6px);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ให้ยังเห็นรูปทรงแต่พิมพ์ไม่ได้ */
+.api-readonly {
+  background: rgba(0, 0, 0, .35);
+}
+
+/* ปิด scroll ของหน้า popup ตอนเปิด settings */
+.no-scroll {
+  overflow: hidden !important;
+}
+
+/* Checkbox row */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px 0;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #2f6bff;
+}
+
+/* ========== LIGHT THEME ========== */
+body.light-theme {
+  background: #f5f6f8;
+  color: #1a1a1a;
+}
+
+body.light-theme .wrap {
+  background: #f5f6f8;
+}
+
+body.light-theme .icon-btn {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+body.light-theme .scan-btn {
+  background: linear-gradient(135deg, #2f6bff, #7b2fff);
+  color: #fff;
+}
+
+body.light-theme .badge {
+  background: #e8e8e8;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #1a1a1a;
+}
+
+body.light-theme .card {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .card.light {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme input,
+body.light-theme textarea {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #1a1a1a;
+}
+
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder {
+  color: #888;
+}
+
+body.light-theme .btn {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #1a1a1a;
+}
+
+body.light-theme .settings {
+  background: #ebeef3;
+}
+
+body.light-theme .settingsHeader {
+  background: #ebeef3;
+}
+
+body.light-theme .sub,
+body.light-theme .metaLine,
+body.light-theme .small {
+  color: #555;
+}
+
+body.light-theme .vt-result {
+  background: rgba(0, 0, 0, 0.04);
+  color: #333;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: linear-gradient(135deg, #2f6bff, #7b2fff);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(47, 107, 255, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+body.light-theme .toast {
+  background: linear-gradient(135deg, #2f6bff, #7b2fff);
+  color: #fff;
+}

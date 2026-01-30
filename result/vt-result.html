@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>VirusTotal Check Result</title>
+    <link rel="stylesheet" href="vt-result.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="title">VirusTotal Check</div>
+        </div>
+
+        <div class="status-badge" id="statusBadge">
+            <span class="status-icon" id="statusIcon">🔍</span>
+            <span class="status-text" id="statusText">Checking...</span>
+        </div>
+
+        <div class="url-box" id="urlBox">—</div>
+
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-item malicious">
+                <div class="stat-value" id="maliciousCount">—</div>
+                <div class="stat-label">Malicious</div>
+            </div>
+            <div class="stat-item suspicious">
+                <div class="stat-value" id="suspiciousCount">—</div>
+                <div class="stat-label">Suspicious</div>
+            </div>
+            <div class="stat-item harmless">
+                <div class="stat-value" id="harmlessCount">—</div>
+                <div class="stat-label">Harmless</div>
+            </div>
+            <div class="stat-item undetected">
+                <div class="stat-value" id="undetectedCount">—</div>
+                <div class="stat-label">Undetected</div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <a id="viewReport" class="btn" href="#" target="_blank">View Full Report</a>
+            <button id="closeBtn" class="btn secondary">Close</button>
+        </div>
+
+        <div id="errorBox" class="error-box hidden"></div>
+    </div>
+
+    <script src="vt-result.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <div class="title">Phishing Mail Detector</div>
+          <div class="sub" id="statusText">Ready to scan</div>
+        </div>
+      </div>
+      <button id="gearBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙️</button>
+    </div>
+
+    <div class="scan-btn-wrap">
+      <button id="scanBtn" class="scan-btn">📧 Scan</button>
+    </div>
+
+
+    <div id="resultWrap" class="result hidden">
+      <div class="resultTop">
+        <div class="badge" id="levelBadge">—</div>
+      </div>
+      <div class="metaLine" id="metaLine">—</div>
+
+      <div class="card">
+        <div class="cardTitle">Why?</div>
+        <ul id="reasons"></ul>
+      </div>
+
+      <div class="card">
+        <div class="cardTitle">VirusTotal URL Check</div>
+        <div class="row">
+          <input id="urlInput" placeholder="https://example.com" />
+          <button id="checkBtn" class="btn" type="button">Check</button>
+        </div>
+        <div id="vtOut" class="vt-result"></div>
+
+      </div>
+
+
+    </div>
+
+    <div id="settingsPanel" class="settings hidden">
+      <div class="settingsHeader">
+        <div class="settingsTitle">Settings</div>
+        <button id="closeSettingsBtn" class="icon-btn" title="Close" aria-label="Close">✖</button>
+      </div>
+
+      <!-- Dark Mode Toggle -->
+      <div class="card light">
+        <div class="cardTitle">◐ Dark mode</div>
+        <label class="checkbox-row">
+          <input type="checkbox" id="darkModeToggle" />
+          <span>Enable dark mode</span>
+        </label>
+      </div>
+
+      <div class="card light">
+        <div class="cardTitle">VirusTotal API Key <a href="https://www.virustotal.com/gui/my-apikey" target="_blank"
+            class="get-api-link">Get API</a></div>
+        <input id="vtApiKey" type="password" placeholder="Paste your VT API key" />
+        <button id="saveKey" class="btn full" type="button">Save API Key</button>
+
+      </div>
+
+      <div class="card light">
+        <div class="cardTitle">Allowlist Domains (one per line)</div>
+        <textarea id="allowDomains" rows="6"></textarea>
+        <button id="saveAllow" class="btn full" type="button">Save Domains</button>
+      </div>
+
+      <div class="card light">
+        <div class="cardTitle">Suspicious Keywords (one per line)</div>
+        <textarea id="susKw" rows="6"></textarea>
+        <button id="saveSus" class="btn full" type="button">Save Suspicious Keywords</button>
+      </div>
+
+      <div class="card light">
+        <div class="cardTitle">Dangerous Keywords (one per line)</div>
+        <textarea id="danKw" rows="6"></textarea>
+        <button id="saveDan" class="btn full" type="button">Save Dangerous Keywords</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../src/storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>
